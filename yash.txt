@@ -1,1 +1,1 @@
-yash ns
+yash lin
