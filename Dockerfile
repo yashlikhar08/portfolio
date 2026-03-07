@@ -1,9 +1,25 @@
+# Build stage
+FROM node:20-alpine AS build
 
-#FROM nginx
-#COPY . /usr/share/nginx/html/
+WORKDIR /app
 
-FROM nginx
-COPY . /usr/share/nginx/html
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the application
+RUN npm run build
+
+# Production stage
+FROM nginx:stable-alpine
+
+# Copy the build output from the build stage to Nginx's serve directory
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80
 EXPOSE 80
-# Command to start NGINX when the container is started
+
 CMD ["nginx", "-g", "daemon off;"]
