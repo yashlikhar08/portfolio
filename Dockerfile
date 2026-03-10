@@ -3,20 +3,20 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-# Copy everything first
+COPY package*.json ./
+
+RUN npm install --include=dev
+
 COPY . .
 
-# Install dependencies
-RUN npm install
-
-# Build the application
 RUN npm run build
+
 
 # Production stage
 FROM nginx:stable-alpine
 
-# Copy build output
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
