@@ -16,7 +16,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 
 # Copy custom nginx config to enable SPA fallback (try_files -> index.html)
-# COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy built site
 # Copy built site
@@ -25,7 +25,7 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Ensure sitemap and robots are available at the site root
 COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY robots.txt /usr/share/nginx/html/robots.txt
-COPY google3c5a6b41c8407f8a.html /usr/share/nginx/html/robots.txt
+COPY google3c5a6b41c8407f8a.html /usr/share/nginx/html/google3c5a6b41c8407f8a.html
 
 EXPOSE 80
 
