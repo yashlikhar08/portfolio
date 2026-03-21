@@ -5,6 +5,10 @@
     <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yashlikhar.mine8.in/assets/yash.webp</image:loc>
+      <image:caption>Profile — Yash Likhar</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://yashlikhar.mine8.in/#about</loc>
