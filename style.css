@@ -624,6 +624,15 @@ h4 {
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Project thumbnail image fits the card area */
+.project-image img,
+.project-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .placeholder-img {
   width: 100%;
   height: 100%;
