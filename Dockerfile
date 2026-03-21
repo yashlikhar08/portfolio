@@ -16,7 +16,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 
 # Copy custom nginx config to enable SPA fallback (try_files -> index.html)
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+# COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy built site
 # Copy built site
