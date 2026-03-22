@@ -25,6 +25,9 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Ensure sitemap and robots are available at the site root
 COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY robots.txt /usr/share/nginx/html/robots.txt
+ 
+# Copy logo assets so favicons and manifest are available at /assets/logo/
+COPY assets/logo /usr/share/nginx/html/assets/logo
 
 EXPOSE 80
 
