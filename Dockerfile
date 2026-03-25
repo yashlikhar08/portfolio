@@ -29,6 +29,10 @@ COPY robots.txt /usr/share/nginx/html/robots.txt
 # Copy logo assets so favicons and manifest are available at /assets/logo/
 COPY assets/logo /usr/share/nginx/html/assets/logo
 
+# Also copy a root favicon so crawlers and browsers can find it at /favicon.ico
+COPY assets/logo/favicon.ico /usr/share/nginx/html/favicon.ico
+COPY assets/logo/favicon.svg /usr/share/nginx/html/favicon.svg
+
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
