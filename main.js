@@ -169,7 +169,7 @@ class Particle {
   }
 
   draw() {
-    ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+    ctx.fillStyle = `rgba(167, 139, 250, ${this.opacity})`;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
@@ -204,7 +204,7 @@ function animateParticles() {
       if (distSq < 10000) { // 100 * 100
         const distance = Math.sqrt(distSq);
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(56, 189, 248, ${(0.1 - distance / 100).toFixed(2)})`;
+        ctx.strokeStyle = `rgba(167, 139, 250, ${(0.08 - distance / 100 * 0.08).toFixed(2)})`;
         ctx.lineWidth = 0.5;
         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
@@ -247,3 +247,46 @@ document.querySelectorAll('.reveal').forEach(section => {
   revealObserver.observe(section);
 });
 
+// --- Stats Counter Animation ---
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(eased * target);
+    el.textContent = current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.stat-number').forEach(animateCounter);
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) statsObserver.observe(statsSection);
+
+// --- Collapsible Experience Cards ---
+document.querySelectorAll('.expand-btn').forEach(btn => {
+  const duties = btn.previousElementSibling;
+  // Start collapsed — duties already have max-height:0 via CSS
+  // Wire up the click
+  btn.addEventListener('click', () => {
+    const isOpen = duties.classList.toggle('expanded');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.firstChild.textContent = isOpen ? 'Hide details' : 'Show details';
+  });
+});

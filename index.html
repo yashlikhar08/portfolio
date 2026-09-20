@@ -115,7 +115,6 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
       </ul>
     </div>
   </nav>
@@ -147,52 +146,136 @@
       </div>
     </section>
 
+    <!-- Stats Counter Strip -->
+    <section class="stats-section reveal">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="2" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="30" data-suffix="+">0</div>
+            <div class="stat-label">Automations Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="99" data-suffix=".9%">0</div>
+            <div class="stat-label">Uptime Achieved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="40" data-suffix="%↓">0</div>
+            <div class="stat-label">MTTR Reduced</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- About & Experience -->
     <section class="section bg-alternate reveal">
       <div class="container">
         <div class="two-columns">
 
-          <!-- Professional Summary -->
-          <div id="about" class="about-block">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="about-text" style="max-width: none;">
-              DevOps Engineer with 2+ years of experience building highly scalable CI/CD infrastructure and cloud-native
-              solutions.
-              Proven track record of improving deployment velocity by 2x, reducing system downtime by 40%, and achieving
-              99.9% service availability.
-              Expertise in containerization, orchestration, monitoring, and automation across multi-cloud environments.
-              Strong background in full-stack development with production-level system design experience.
-            </p>
+          <!-- Left Column: Summary + Education + Achievements -->
+          <div class="left-col">
+
+            <!-- Professional Summary -->
+            <div id="about" class="about-block">
+              <h2 class="section-title">Professional Summary</h2>
+              <p class="about-text" style="max-width: none;">
+                DevOps Engineer with 2+ years of experience building highly scalable CI/CD infrastructure and
+                cloud-native
+                solutions.
+                Proven track record of improving deployment velocity by 2x, reducing system downtime by 40%, and
+                achieving
+                99.9% service availability.
+                Expertise in containerization, orchestration, monitoring, and automation across multi-cloud
+                environments.
+                Strong background in full-stack development with production-level system design experience.
+              </p>
+            </div>
+
+
+            <!-- Key Achievements -->
+            <div class="achievements-block" style="margin-top: 2.5rem;">
+              <h2 class="section-title">Key Achievements</h2>
+              <ul class="achievements-list">
+                <li>Improved deployment velocity by 2x while reducing deployment-related incidents to zero.</li>
+                <li>Achieved 99.9% service availability across production environments serving millions.</li>
+                <li>Reduced operational costs by 30% through container optimization.</li>
+                <li>Maintained 12-month streak with zero critical monitoring blind spots across 200+ microservices.</li>
+              </ul>
+            </div>
+
           </div>
 
-          <!-- Experience -->
+          <!-- Right Column: Experience -->
           <div id="experience" class="experience-block">
             <h2 class="section-title">Experience</h2>
             <div class="timeline" style="max-width: none;">
-              <!-- Job 1 -->
+              <!-- Job 1 — YES Securities (Most Recent) -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h3>DevOps Engineer</h3>
+                    <span class="company">YES Securities | India</span>
+                    <span class="date">Jul 2026 — Present</span>
+                  </div>
+                  <ul class="duties">
+                    <li>Engineered end-to-end automation of <span class="kw">15+ manual workflows</span>, reclaiming
+                      <span class="kw">1–2 hours</span> of engineering bandwidth daily and significantly reducing
+                      human-error risk in production environments.</li>
+                    <li>Modernized legacy shell-script deployment workflows by migrating them to scalable <span
+                        class="kw">Jenkins Jobs backed by Shared Libraries</span>, enabling reusable,
+                      version-controlled, and auditable CI/CD pipelines across multiple teams.</li>
+                    <li>Conducted comprehensive <span class="kw">baseline &amp; middleware assessments</span> across
+                      production servers, proactively identifying vulnerabilities, patching outdated components, and
+                      aligning the infrastructure stack with current industry security and performance standards.</li>
+                  </ul>
+                  <button class="expand-btn" aria-expanded="false">
+                    Show details
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Job 2 — Jio Platforms -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                   <div class="timeline-header">
                     <h3>DevOps Engineer</h3>
                     <span class="company">Jio Platforms Limited (JPL) | Bengaluru, India</span>
-                    <span class="date">Jan 2024 — Present</span>
+                    <span class="date">Jan 2024 — Jun 2026</span>
                   </div>
                   <ul class="duties">
-                    <li>Architected CI/CD pipelines (Jenkins, Azure DevOps, SonarQube) and automated infrastructure with
-                      Ansible and Bash/Python, reducing deployment effort by 70% and doubling release frequency.</li>
-                    <li>Containerized 15+ monolithic applications into Docker and orchestrated via Kubernetes, improving
-                      overall scalability by 50% and reducing resource costs by 30%.</li>
-                    <li>Implemented a comprehensive Prometheus, Grafana, and ELK observability stack, enabling real-time
-                      monitoring of 200+ microservices with zero critical blind spots over 12+ months.</li>
-                    <li>Executed zero-downtime upgrades for critical production services serving millions of users,
-                      consistently achieving and maintaining a 99.9% uptime SLA.</li>
-                    <li>Spearheaded root cause analysis and advanced debugging for Azure DevOps and critical
-                      infrastructure issues, successfully reducing Mean Time To Recovery (MTTR) by 40%.</li>
+                    <li>Architected <span class="kw">CI/CD pipelines</span> (Jenkins, Azure DevOps, SonarQube) and
+                      automated infrastructure with Ansible and Bash/Python, reducing deployment effort by <span
+                        class="kw">70%</span> and doubling release frequency.</li>
+                    <li>Containerized <span class="kw">15+ monolithic applications</span> into Docker and orchestrated
+                      via Kubernetes, improving overall scalability by <span class="kw">50%</span> and reducing resource
+                      costs by <span class="kw">30%</span>.</li>
+                    <li>Implemented a comprehensive <span class="kw">Prometheus, Grafana &amp; ELK</span> observability
+                      stack, enabling real-time monitoring of <span class="kw">200+ microservices</span> with zero
+                      critical blind spots over 12+ months.</li>
+                    <li>Executed <span class="kw">zero-downtime upgrades</span> for critical production services serving
+                      millions of users, consistently achieving and maintaining a <span class="kw">99.9% uptime
+                        SLA</span>.</li>
+                    <li>Spearheaded root cause analysis and advanced debugging for Azure DevOps infrastructure issues,
+                      successfully reducing <span class="kw">MTTR by 40%</span>.</li>
                   </ul>
+                  <button class="expand-btn" aria-expanded="false">
+                    Show details
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-
 
             </div>
           </div>
@@ -317,30 +400,7 @@
       </div>
     </section>
 
-    <!-- Education & Achievements -->
-    <section id="education" class="education section reveal">
-      <div class="container">
-        <div class="two-columns">
-          <div class="education-block">
-            <h2 class="section-title">Education</h2>
-            <div class="edu-item">
-              <h3>Bachelor of Technology in Information Technology</h3>
-              <span class="school">G.H. Raisoni College of Engineering, Nagpur</span>
-              <span class="date">Jun 2019 — Jun 2023</span>
-            </div>
-          </div>
-          <div class="achievements-block">
-            <h2 class="section-title">Key Achievements</h2>
-            <ul class="achievements-list">
-              <li>Improved deployment velocity by 2x while reducing deployment-related incidents to zero.</li>
-              <li>Achieved 99.9% service availability across production environments serving millions.</li>
-              <li>Reduced operational costs by 30% through container optimization.</li>
-              <li>Maintained 12-month streak with zero critical monitoring blind spots across 200+ microservices.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+
   </main>
 
   <footer id="contact" class="footer">
